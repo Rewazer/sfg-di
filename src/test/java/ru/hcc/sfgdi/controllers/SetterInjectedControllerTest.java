@@ -2,7 +2,7 @@ package ru.hcc.sfgdi.controllers;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import ru.hcc.sfgdi.services.GreetingServiceImpl;
+import ru.hcc.sfgdi.services.ConstructorGreetingService;
 
 /*
  * Created by SS on  16/05/2020
@@ -15,7 +15,7 @@ class SetterInjectedControllerTest {
     @BeforeEach
     void setUp() {
         controller = new SetterInjectedController();
-        controller.setGreetingService(new GreetingServiceImpl());
+        controller.setGreetingService(new ConstructorGreetingService());
     }
 
     @Test
