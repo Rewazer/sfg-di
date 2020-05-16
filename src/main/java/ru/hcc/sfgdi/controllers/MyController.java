@@ -1,11 +1,17 @@
 package ru.hcc.sfgdi.controllers;
 
 import org.springframework.stereotype.Controller;
+import ru.hcc.sfgdi.services.GreetingService;
 
 @Controller
 public class MyController {
+    private final GreetingService greetingService;
+
+    public MyController(GreetingService greetingService) {
+        this.greetingService = greetingService;
+    }
+
     public String sayHello() {
-        System.out.println("Hello world!!!");
-        return "Hi Folks";
+        return greetingService.sayGreeting();
     }
 }
