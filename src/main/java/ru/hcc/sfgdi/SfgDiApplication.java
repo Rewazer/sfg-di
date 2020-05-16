@@ -3,10 +3,7 @@ package ru.hcc.sfgdi;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
-import ru.hcc.sfgdi.controllers.ConstructorInjectedController;
-import ru.hcc.sfgdi.controllers.MyController;
-import ru.hcc.sfgdi.controllers.PropertyInjectedController;
-import ru.hcc.sfgdi.controllers.SetterInjectedController;
+import ru.hcc.sfgdi.controllers.*;
 
 @SpringBootApplication
 public class SfgDiApplication {
@@ -14,6 +11,11 @@ public class SfgDiApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(SfgDiApplication.class, args);
+
+		System.out.println("-------- I18nController");
+
+		I18nController i18nController = (I18nController) ctx.getBean("i18nController");
+		System.out.println(i18nController.sayHello());
 
 		System.out.println("-------- primary");
 
